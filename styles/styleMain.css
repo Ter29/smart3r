@@ -1,0 +1,200 @@
+/* Основні стилі */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-width: 500px;
+}
+
+/* Стилі для хедера */
+header {
+    display: flex; /* Робимо хедер гнучким контейнером */
+    justify-content: space-between; /* Розміщуємо елементи по краях */
+    align-items: center; /* Вирівнюємо по вертикалі */
+    padding: 20px 50px; /* Внутрішні відступи */
+    border-bottom: 1px solid #ddd; /* Лінія під хедером */
+}
+
+/* Стилі для логотипа */
+.logo {
+    font-size: 58px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #000;
+}
+
+/* Стилі для меню */
+nav a {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+.black{
+    background-color: black;
+    min-height: 40vh;
+    align-items: center;
+    display: flex; /* Робимо хедер гнучким контейнером */
+    justify-content: center;
+    flex-direction: column; /* !!! Додаємо колонку замість рядка */
+
+}
+.slogan{
+    color: white;
+    font-family: "Moirai One", serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 10vh;
+}
+.whitetext{
+    color: #ffffff;
+    display: block;
+    font-style: italic;
+
+}
+
+#face {
+    margin-left: 5%;
+    width: 30%; /* Ensure the image is responsive */
+    max-height: 30%; /* Limit height to viewport */ 
+    opacity: 0.65;  
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out; /* Add width and height transitions */
+    filter: contrast(150%);
+    transform: rotate(-15deg); /* Rotate image by 45 degrees */
+}
+#face:hover{
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+    transform: rotate(0); /* Rotate image by 45 degrees */
+    width: 50%; /* Ensure the image is responsive */
+    max-height: 50%; /* Limit height to viewport */ 
+}
+
+#hand {
+    opacity: 0.65;  
+    margin-top: 10%;
+    position: absolute; /* Position it absolutely */
+    transform: rotate(0); /* No flip, just rotation */
+    right: 0; /* Align it to the right side */
+    width: 30%;
+    height: 50%; /* Limit height to viewport */ 
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out; /* Add width and height transitions */    
+}
+
+#hand:hover {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+    width: 50%; /* Ensure the image is responsive */
+    height: 70%; /* Limit height to viewport */ 
+    transform: rotate(70deg); /* Rotate image without flipping */
+}
+
+main {
+    position: relative; /* Make main a reference point for absolute positioning */
+    height: 800px;
+    background-image: url(img/smoke.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Prevents overflowing */
+}
+
+#man {
+    position: absolute; /* Absolute positioning relative to main */
+    bottom: 0; /* Stick it to the bottom */
+    left: 50%; /* Move it to the center */
+    transform: translateX(-60%); /* Adjust for exact centering */
+    width: 50%; /* Adjust as needed */
+    max-width: 400px; /* Prevents it from getting too large */
+    opacity: 0.65;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition */
+    filter: contrast(150%);
+}
+
+#man:hover {
+    opacity: 1;
+    transform: translateX(-80%); /* Moves slightly right smoothly */
+}
+
+.lineLeft {
+    position: relative;
+    width: 100%; /* Make sure it spans the full width */
+    height: 20px; /* Adjust the height to fit your layout */
+}
+
+.lineLeft::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Adjust the vertical position */
+    left: 10%; /* Start from the right */
+    width: 45%; /* Extends to the middle of the page */
+    height: 4.5px; /* Thickness of the line */
+    background-color: black; /* Line color */
+}
+.lineRight {
+    position: relative;
+    width: 100%; /* Make sure it spans the full width */
+    height: 20px; /* Adjust the height to fit your layout */
+}
+
+.lineRight::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Adjust the vertical position */
+    right: 0; /* Start from the right */
+    width: 60%; /* Extends to the middle of the page */
+    height: 4.5px; /* Thickness of the line */
+    background-color: black; /* Line color */
+}
+.blackBlock {
+    background-color: black; /* Black background */
+    width: 100%; /* Full width */
+    height: 200px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Left white line */
+.lineLeft1::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    width: 60%; /* Adjust width */
+    height: 4.5px;
+    background-color: white; /* White line */
+}
+
+/* Right white line */
+.lineRight1::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    width: 45%; /* Adjust width */
+    height: 4.5px;
+    background-color: white; /* White line */
+}
+.horizontal-list {
+    list-style: none; /* Видаляємо маркери списку */
+    padding: 0;
+    display: flex; /* Розташування елементів у ряд */
+    justify-content: center; /* Вирівнювання по центру */
+    gap: 20px; /* Відстань між елементами */
+}
+
+.horizontal-list li {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 10%;
+    border-radius: 5px;
+}
+html {
+    scroll-behavior: smooth; /* This will enable smooth scrolling */
+}
+.footerElements{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+}
