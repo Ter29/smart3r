@@ -1,0 +1,322 @@
+/* Основні стилі */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-width: 320px;
+    width: 100%;
+}
+
+/* Стилі для хедера */
+header {
+    display: flex; /* Робимо хедер гнучким контейнером */
+    justify-content: space-between; /* Розміщуємо елементи по краях */
+    align-items: center; /* Вирівнюємо по вертикалі */
+    padding: 20px 50px; /* Внутрішні відступи */
+    border-bottom: 1px solid #ddd; /* Лінія під хедером */
+}
+
+/* Стилі для логотипа */
+.logo {
+    font-size: 58px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #000;
+    min-width: 150px;
+}
+
+/* Стилі для меню */
+nav a {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+.black{ 
+    background-color: black;
+    min-height: 40vh;
+    align-items: center;
+    display: flex; /* Робимо хедер гнучким контейнером */
+    justify-content: center;
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 100%; /* !!! Додаємо колонку замість рядка */
+
+}
+.slogan{
+    color: white;
+    font-family: "Moirai One", serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 8.5vh;
+}
+.whitetext{
+    color: #ffffff;
+    display: block;
+    font-style: italic;
+
+}
+
+.lineLeft {
+    position: relative;
+    width: 100%; /* Make sure it spans the full width */
+    height: 20px; /* Adjust the height to fit your layout */
+}
+
+.lineLeft::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Adjust the vertical position */
+    left: 10%; /* Start from the right */
+    width: 45%; /* Extends to the middle of the page */
+    height: 4.5px; /* Thickness of the line */
+    background-color: black; /* Line color */
+}
+.lineRight {
+    position: relative;
+    width: 100%; /* Make sure it spans the full width */
+    height: 20px; /* Adjust the height to fit your layout */
+}
+
+.lineRight::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Adjust the vertical position */
+    right: 0; /* Start from the right */
+    width: 60%; /* Extends to the middle of the page */
+    height: 4.5px; /* Thickness of the line */
+    background-color: black; /* Line color */
+}
+.rightSide, .leftSide {
+    flex: 1;
+    min-width: 200px; /* Prevents extreme shrinking */
+}
+.blackBlock {
+    background-color: black; /* Black background */
+    width: 100%; /* Full width */
+    height: 200px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Left white line */
+.lineLeft1::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 0%;
+    width: 60%; /* Adjust width */
+    height: 4.5px;
+    background-color: white; /* White line */
+}
+
+/* Right white line */
+.lineRight1::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    width: 45%; /* Adjust width */
+    height: 4.5px;
+    background-color: white; /* White line */
+}
+.horizontal-list {
+    list-style: none; /* Видаляємо маркери списку */
+    padding: 0;
+    display: flex; /* Розташування елементів у ряд */
+    justify-content: center; /* Вирівнювання по центру */
+    gap: 20px; /* Відстань між елементами */
+}
+
+.horizontal-list .horizontal-list-li {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 10%;
+    border-radius: 5px;
+}
+html {
+    scroll-behavior: smooth; /* This will enable smooth scrolling */
+}
+.footerElements{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+}
+#portrait{
+    margin-left: 10px;
+    width: 80%;
+    border-radius: 50%;
+    border: 2px solid #000; /* Correct way to set border */
+}
+.leftSide{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+}
+.rightSide{
+    height: 100%;
+    width: 55%;
+    align-items: center;
+    word-wrap: break-word; /* Ensures long words wrap */
+    white-space: normal; /* Allows text to break into new lines */
+    text-align: center; /* Centers text horizontally */
+}
+ul{
+    margin-left: -10px;
+}
+main {
+    display: flex;  /* Makes leftSide and rightSide align horizontally */
+    align-items: center;  /* Aligns items in the center vertically */
+    justify-content: space-between; /* Adds space between the sections */
+    flex-wrap: wrap;
+    padding: 20px; /* Optional: Adds padding around */
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+canvas {
+    width: 500px !important;
+    height: 150px !important;
+}
+.blocksOfPortfolio {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Відстань між блоками */
+    margin-top: 20px;
+}
+
+.block {
+    width: 150px; /* Задайте потрібний розмір */
+    height: 150px;
+    background-color: #ccc; /* Сірий фон, поки немає зображень */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.block:hover {
+    transform: scale(1.05);
+}
+
+.block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Щоб зображення заповнювали блок */
+}
+@media (max-width: 480px) {
+    .logo {
+        font-size: 45px;
+    }
+
+
+    .blackBlock {
+        min-height: 80px;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center; /* Центрує текст */
+    }
+    #portrait {
+        width: 80%; /* Щоб не було впритул */
+        max-width: 300px; /* Не дуже велике */
+        height: auto;
+        display: block;
+        margin: 0 auto; /* Центрує */
+    }
+    .leftSide, .rightSide {
+        width: 100%;
+    }
+    .horizontal-list {
+        max-width: 100%; /* Щоб список не вилазив */
+        flex-wrap: wrap;
+        margin-top: 10%; /* Якщо місця мало – переносити елементи */
+    }
+    
+    
+    .horizontal-list .horizontal-list-li {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 10%;
+        border-radius: 5px;
+    }
+    .blackBlock {
+        padding: 0;
+        margin: 0;
+        overflow: hidden; /* Запобігає виходу елементів */
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 45px;
+        
+    }
+
+    .slogan {
+        font-size: 8vh;
+        text-align: center; /* Центрує текст */
+        padding-left: 0; /* Видаляємо зміщення */
+    }
+
+    .blackBlock {
+        min-height: 80px;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center; /* Центрує текст */
+    }
+    #portrait {
+        width: 80%; /* Щоб не було впритул */
+        max-width: 300px; /* Не дуже велике */
+        height: auto;
+        display: block;
+        margin: 0 auto; /* Центрує */
+    }
+    .leftSide, .rightSide {
+        width: 100%;
+    }
+    .horizontal-list {
+        max-width: 100%; /* Щоб список не вилазив */
+        flex-wrap: wrap;
+        margin-top: 10%; /* Якщо місця мало – переносити елементи */
+    }
+    
+    
+    .horizontal-list .horizontal-list-li {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 10%;
+        border-radius: 5px;
+    }
+    .blackBlock {
+        padding: 0;
+        margin: 0;
+        overflow: hidden; /* Запобігає виходу елементів */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .leftSide {
+        width: 40%;
+    }
+    .rightSide {
+        width: 55%;
+        text-align: left;
+    }
+}
