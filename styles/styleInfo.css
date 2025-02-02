@@ -1,8 +1,10 @@
 /* Основні стилі */
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    min-width: 500px;
+    min-width: 320px;
+    width: 100%;
 }
 
 /* Стилі для хедера */
@@ -20,6 +22,7 @@ header {
     font-weight: bold;
     text-decoration: underline;
     color: #000;
+    min-width: 150px;
 }
 
 /* Стилі для меню */
@@ -28,13 +31,15 @@ nav a {
     text-decoration: none;
     color: black;
 }
-.black{
+.black{ 
     background-color: black;
     min-height: 40vh;
     align-items: center;
     display: flex; /* Робимо хедер гнучким контейнером */
     justify-content: center;
-    flex-direction: column; /* !!! Додаємо колонку замість рядка */
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 100%; /* !!! Додаємо колонку замість рядка */
 
 }
 .slogan{
@@ -42,7 +47,7 @@ nav a {
     font-family: "Moirai One", serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 10vh;
+    font-size: 8.5vh;
 }
 .whitetext{
     color: #ffffff;
@@ -81,6 +86,10 @@ nav a {
     height: 4.5px; /* Thickness of the line */
     background-color: black; /* Line color */
 }
+.rightSide, .leftSide {
+    flex: 1;
+    min-width: 200px; /* Prevents extreme shrinking */
+}
 .blackBlock {
     background-color: black; /* Black background */
     width: 100%; /* Full width */
@@ -117,10 +126,10 @@ nav a {
     padding: 0;
     display: flex; /* Розташування елементів у ряд */
     justify-content: center; /* Вирівнювання по центру */
-    gap: 20px; /* Відстань між елементами */
+    gap: 10px; /* Відстань між елементами */
 }
 
-.horizontal-list li {
+.horizontal-list .horizontal-list-li {
     background-color: #000;
     color: #fff;
     padding: 20px 10%;
@@ -137,6 +146,7 @@ html {
 }
 #portrait{
     margin-left: 10px;
+    width: 80%;
     border-radius: 50%;
     border: 2px solid #000; /* Correct way to set border */
 }
@@ -154,56 +164,23 @@ html {
     white-space: normal; /* Allows text to break into new lines */
     text-align: center; /* Centers text horizontally */
 }
-.newTextButton {
-    display: inline-block;
-    height: 20%;
-    width: 20%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+ul{
+    margin-left: -10px;
 }
-.newTextButton1 {
-    display: inline-block;
-    height: 20%;
-    width: 20%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.textBox {
-    margin-top: 15px;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: #ffffff;
-    text-align: center;
-    font-size: 16px;
-    display: none; /* Спочатку ховаємо блок */
-}
-
-
 main {
     display: flex;  /* Makes leftSide and rightSide align horizontally */
     align-items: center;  /* Aligns items in the center vertically */
     justify-content: space-between; /* Adds space between the sections */
-    padding: 20px; /* Optional: Adds padding around */
+    flex-wrap: wrap;
 }
 
-.chart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-}
-
-canvas {
-    width: 500px !important;
-    height: 150px !important;
-}
 .blocksOfPortfolio {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Відстань між блоками */
+    gap: 5%; /* Відстань між блоками */
     margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5%;
 }
 
 .block {
@@ -226,4 +203,116 @@ canvas {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Щоб зображення заповнювали блок */
+}
+@media (max-width: 480px) {
+    .logo {
+        font-size: 45px;
+    }
+    .blackBlock {
+        min-height: 80px;
+    }
+    main {
+        display: flex;
+        flex-wrap: wrap; /* Дозволяє переносити елементи */
+        justify-content: center; /* Вирівнювання по центру */
+        align-items: center; 
+        width: 100%;
+        gap: 20px; /* Відстань між елементами */
+    }
+    .horizontal-list {
+        max-width: 100%; /* Щоб список не вилазив */
+        flex-wrap: wrap;
+        margin-top: 10%; /* Якщо місця мало – переносити елементи */
+    }
+    .horizontal-list .horizontal-list-li {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 10%;
+        border-radius: 5px;
+    }
+    .blackBlock {
+        padding: 0;
+        margin: 0;
+    }
+    .blocksOfPortfolio {
+        display: flex;
+        flex-wrap: wrap; /* Дозволяє переносити елементи */
+        justify-content: center; /* Центрує блоки */
+        gap: 10px; /* Фіксований відступ між блоками */
+        width: 90%;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    .block {
+        width: calc(50% - 10px); /* Два блоки в ряд */
+        height: auto; /* Автоматична висота */
+        max-width: 120px; /* Обмежує максимальну ширину */
+    }
+
+    .block img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 45px;
+        
+    }
+
+    .slogan {
+        font-size: 8vh;
+        text-align: center; /* Центрує текст */
+        padding-left: 0; /* Видаляємо зміщення */
+    }
+
+    .blackBlock {
+        min-height: 80px;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center; /* Центрує текст */
+    }
+    #portrait {
+        width: 80%; /* Щоб не було впритул */
+        max-width: 300px; /* Не дуже велике */
+        height: auto;
+        display: block;
+        margin: 0 auto; /* Центрує */
+    }
+    .leftSide, .rightSide {
+        width: 100%;
+    }
+    .horizontal-list {
+        max-width: 100%; /* Щоб список не вилазив */
+        margin-top: 10%; /* Якщо місця мало – переносити елементи */
+    }
+    
+    
+    .horizontal-list .horizontal-list-li {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 10%;
+        border-radius: 5px;
+    }
+    .blackBlock {
+        padding: 0;
+        margin: 0;
+        overflow: hidden; /* Запобігає виходу елементів */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .leftSide {
+        width: 40%;
+    }
+    .rightSide {
+        width: 55%;
+        text-align: left;
+    }
 }

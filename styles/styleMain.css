@@ -1,8 +1,10 @@
 /* Основні стилі */
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    min-width: 500px;
+    min-width: 320px;
+    width: 100%;
 }
 
 /* Стилі для хедера */
@@ -20,21 +22,27 @@ header {
     font-weight: bold;
     text-decoration: underline;
     color: #000;
+    min-width: 150px;
 }
-
+.personal{
+    text-decoration: none;
+    color: white;
+}
 /* Стилі для меню */
 nav a {
     font-size: 18px;
     text-decoration: none;
     color: black;
 }
-.black{
+.black{ 
     background-color: black;
     min-height: 40vh;
     align-items: center;
     display: flex; /* Робимо хедер гнучким контейнером */
     justify-content: center;
-    flex-direction: column; /* !!! Додаємо колонку замість рядка */
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 100%; /* !!! Додаємо колонку замість рядка */
 
 }
 .slogan{
@@ -42,76 +50,13 @@ nav a {
     font-family: "Moirai One", serif;
     font-weight: 800;
     font-style: normal;
-    font-size: 10vh;
+    font-size: 8.5vh;
 }
 .whitetext{
     color: #ffffff;
     display: block;
     font-style: italic;
 
-}
-
-#face {
-    margin-left: 5%;
-    width: 30%; /* Ensure the image is responsive */
-    max-height: 30%; /* Limit height to viewport */ 
-    opacity: 0.65;  
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out; /* Add width and height transitions */
-    filter: contrast(150%);
-    transform: rotate(-15deg); /* Rotate image by 45 degrees */
-}
-#face:hover{
-    opacity: 1;
-    transition: 0.3s ease-in-out;
-    transform: rotate(0); /* Rotate image by 45 degrees */
-    width: 50%; /* Ensure the image is responsive */
-    max-height: 50%; /* Limit height to viewport */ 
-}
-
-#hand {
-    opacity: 0.65;  
-    margin-top: 10%;
-    position: absolute; /* Position it absolutely */
-    transform: rotate(0); /* No flip, just rotation */
-    right: 0; /* Align it to the right side */
-    width: 30%;
-    height: 50%; /* Limit height to viewport */ 
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out; /* Add width and height transitions */    
-}
-
-#hand:hover {
-    opacity: 1;
-    transition: 0.3s ease-in-out;
-    width: 50%; /* Ensure the image is responsive */
-    height: 70%; /* Limit height to viewport */ 
-    transform: rotate(70deg); /* Rotate image without flipping */
-}
-
-main {
-    position: relative; /* Make main a reference point for absolute positioning */
-    height: 800px;
-    background-image: url(img/smoke.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden; /* Prevents overflowing */
-}
-
-#man {
-    position: absolute; /* Absolute positioning relative to main */
-    bottom: 0; /* Stick it to the bottom */
-    left: 50%; /* Move it to the center */
-    transform: translateX(-60%); /* Adjust for exact centering */
-    width: 50%; /* Adjust as needed */
-    max-width: 400px; /* Prevents it from getting too large */
-    opacity: 0.65;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition */
-    filter: contrast(150%);
-}
-
-#man:hover {
-    opacity: 1;
-    transform: translateX(-80%); /* Moves slightly right smoothly */
 }
 
 .lineLeft {
@@ -144,6 +89,10 @@ main {
     height: 4.5px; /* Thickness of the line */
     background-color: black; /* Line color */
 }
+.rightSide, .leftSide {
+    flex: 1;
+    min-width: 200px; /* Prevents extreme shrinking */
+}
 .blackBlock {
     background-color: black; /* Black background */
     width: 100%; /* Full width */
@@ -152,6 +101,7 @@ main {
     align-items: center;
     justify-content: center;
     position: relative;
+    
 }
 
 /* Left white line */
@@ -180,10 +130,10 @@ main {
     padding: 0;
     display: flex; /* Розташування елементів у ряд */
     justify-content: center; /* Вирівнювання по центру */
-    gap: 20px; /* Відстань між елементами */
+    gap: 60px; /* Відстань між елементами */
 }
 
-.horizontal-list li {
+.horizontal-list .horizontal-list-li {
     background-color: #000;
     color: #fff;
     padding: 20px 10%;
@@ -198,3 +148,109 @@ html {
     font-weight: 600;
     font-size: 20px;
 }
+ul{
+    margin-left: -10px;
+}
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #000000; /* Темний стильний фон */
+    padding: 80px 20px;
+    color: white;
+}
+
+.about-content {
+    max-width: 700px;
+}
+
+.about-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Moirai One', sans-serif;
+}
+
+.about-text {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.highlight {
+    color: #ff5e00; /* Яскравий акцентний колір */
+    font-weight: bold;
+}
+
+.emphasis {
+    font-style: italic;
+    font-weight: 500;
+    color: #f0a500;
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 45px;
+    }
+    .blackBlock {
+        min-height: 80px;
+    }
+
+    .horizontal-list {
+        max-width: 100%; /* Щоб список не вилазив */
+        margin-top: 10%; /* Якщо місця мало – переносити елементи */
+    }
+    .horizontal-list .horizontal-list-li {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 10%;
+        border-radius: 5px;
+    }
+    .blackBlock {
+        padding: 0;
+        margin: 0;
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        font-size: 45px;
+        
+    }
+
+    .slogan {
+        font-size: 8vh;
+        text-align: center; /* Центрує текст */
+        padding-left: 0; /* Видаляємо зміщення */
+    }
+
+    .blackBlock {
+        min-height: 80px;
+    }
+    p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: center;
+        max-width: 90%;
+    }    
+    .horizontal-list {
+        max-width: 100%; /* Щоб список не вилазив */
+        flex-wrap: wrap;
+        margin-top: 10%; /* Якщо місця мало – переносити елементи */
+    }
+    .horizontal-list .horizontal-list-li {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 10%;
+        border-radius: 5px;
+    }
+    .blackBlock {
+        padding: 0;
+        margin: 0;
+        overflow: hidden; /* Запобігає виходу елементів */
+    }
+}
+
