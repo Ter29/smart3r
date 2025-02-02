@@ -20,6 +20,35 @@ $(document).ready(function(){
         } // End if
     });
 });
+$(document).ready(function(){
+    var $search = $("#search");
+    var $suggestions = $("#suggestions");
 
+    // Відкриваємо список при фокусі
+    $search.on("focus", function() {
+        $suggestions.fadeIn(100);
+    });
 
+    // Фільтрація списку при введенні тексту
+    $search.on("input", function() {
+        var value = $(this).val().toLowerCase();
+        $("#suggestions li").each(function() {
+            $(this).toggle($(this).text().toLowerCase().includes(value));
+        });
+    });
 
+    // Закриваємо список при кліку поза ним
+    $(document).on("click", function(e) {
+        if (!$(e.target).closest(".search-container").length) {
+            $suggestions.fadeOut(100);
+        }
+    });
+
+    // Закриваємо список при втраті фокусу (але не при кліку на список)
+    $search.on("blur", function() {
+        setTimeout(function() {
+            $suggestions.fadeOut(100);
+        }, 200); // Невелика затримка для обробки кліка на список
+    });
+
+});
